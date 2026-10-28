@@ -1,6 +1,6 @@
 services:
 
-backend:
+ backend:
   build: ./backend
   ports: 
    - "5000:5000"
@@ -9,19 +9,19 @@ backend:
   depends_on : 
    - database
 
-frontend:
+ frontend:
   build: ./frontend 
   ports: 
     - "5173:80"
   depends_on: 
     - backend
 
-database: 
+ database: 
   image: mongo:latest
   ports: 
     - "27017:27017"
   volumes:
     - db_data:/data/db
 
-volumes: 
+ volumes: 
    db_data:
